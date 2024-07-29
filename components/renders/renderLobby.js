@@ -98,8 +98,7 @@ export default function RenderLobbyGames() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
-  console.log(games);
-
+  console.log(categories);
   return (
     <div className="w-full h-full">
       <div className="flex md:flex-row flex-col gap-6 justify-between p-2 mb-4 mt-2">
