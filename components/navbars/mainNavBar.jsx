@@ -15,7 +15,7 @@ const MainNavBar = () => {
         Play only if over 18 and remember it can cause addiction! - Chance of
         winning
       </TopNavDisclaimer>
-      <nav className="bg-white p-4 border-b-[1px] border-gray-200 flex items-center justify-between relative">
+      <nav className="bg-white z-50 p-4 border-b-[1px] border-gray-200 flex items-center justify-between relative">
         <NavLeft setIsOpen={setIsOpen} isOpen={isOpen} />
         <NavRight />
         <NavMenu isOpen={isOpen} />
