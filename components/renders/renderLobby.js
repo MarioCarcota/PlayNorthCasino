@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { TransitionLink } from "../utils/TransitionLink";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search } from "lucide-react";
+import { AlertOctagon, Search } from "lucide-react";
 
 export default function RenderLobbyGames() {
   const [categories, setCategories] = useState([]);
@@ -98,6 +98,8 @@ export default function RenderLobbyGames() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
+  console.log(games);
+
   return (
     <div className="w-full h-full">
       <div className="flex md:flex-row flex-col gap-6 justify-between p-2 mb-4 mt-2">
@@ -141,12 +143,13 @@ export default function RenderLobbyGames() {
             ))
           ) : games.length === 0 && !loading ? (
             <motion.div
-              className="col-span-full text-3xl text-center text-gray-500"
+              className="col-span-full justify-center items-center flex gap-4 mt-10 text-3xl text-center text-text"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              No games found
+              <AlertOctagon size={40} />
+              No games found!
             </motion.div>
           ) : (
             games.map((game, index) => (
